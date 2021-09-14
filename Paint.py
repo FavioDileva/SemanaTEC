@@ -19,8 +19,11 @@ Exercises
 """
 
 from turtle import *
+import turtle
 
 from freegames import vector
+import math
+
 
 
 def line(start, end):
@@ -47,8 +50,21 @@ def square(start, end):
 
 def circle(start, end):
     "Draw circle from start to end."
-    pass  # TODO
+    up()
+    goto(start.x,start.y)
+    down()
+    begin_fill()
+    c=(end.x-start.x)**2
+    d=(end.x-start.x)**2
+    
+    r=(math.sqrt(c+d))
 
+    turtle.circle(r)
+    end_fill()
+
+
+
+    
 
 def rectangle(start, end):
     "Draw rectangle from start to end."
