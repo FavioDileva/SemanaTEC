@@ -30,6 +30,11 @@ def inside(head):
     "Return True if head inside boundaries."
     return -200 < head.x < 190 and -200 < head.y < 190
 
+def snack(x,y):
+     global food 
+     food.x = randrange(-10,10)*5
+     food.y=randrange(-10,10)*5
+
 
 def move():
     "Move snake forward one segment."
@@ -84,6 +89,7 @@ setup(420, 420, 370, 0)
 hideturtle()
 tracer(False)
 listen()
+onscreenclick(snack)
 onkey(lambda: change(10, 0), 'Right')
 onkey(lambda: change(-10, 0), 'Left')
 onkey(lambda: change(0, 10), 'Up')
