@@ -22,7 +22,7 @@ from turtle import *
 import turtle
 
 from freegames import vector
-import math
+
 
 
 
@@ -54,10 +54,8 @@ def circle(start, end):
     goto(start.x,start.y)
     down()
     begin_fill()
-    c=(end.x-start.x)**2
-    d=(end.x-start.x)**2
     
-    r=(math.sqrt(c+d))
+    r=start.x-end.x 
 
     turtle.circle(r)
     end_fill()
@@ -72,8 +70,20 @@ def rectangle(start, end):
 
 
 def triangle(start, end):
-    "Draw triangle from start to end."
-    pass  # TODO
+    up()
+    goto(start.x, start.y)
+    down()
+    begin_fill()
+
+    for count in range(3): #Se hace el for para el proceso 3 veces por los lados del triangulo
+        forward(end.x - start.x) #Se avanza hacia la dirección deseada en el tamaño deseado
+        left(120) #Se da un giro a la izquierda de 120 grados
+
+    end_fill()
+   
+
+
+
 
 
 def tap(x, y):
