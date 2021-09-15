@@ -4,6 +4,8 @@
 Created on Mon Sep 13 14:47:24 2021
 
 @author: faviodileva
+@author: María Fernanda Vela 
+@author: Claudia Ximena Alcantara
 """
 
 """Paint, for drawing shapes.
@@ -124,6 +126,8 @@ onkey(lambda: color('green'), 'G')
 onkey(lambda: color('blue'), 'B')
 onkey(lambda: color('red'), 'R')
 onkey(lambda:color('yellow'),'Y') #Color agregado amarillo
+onkey(lambda: color('pink'), 'P')  # Color agregado: rosa
+onkey(lambda: color('purple'), 'M')  # Color agregado: morado
 onkey(lambda: store('shape', line), 'l')
 onkey(lambda: store('shape', square), 's')
 onkey(lambda: store('shape', circle), 'c')
