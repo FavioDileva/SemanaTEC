@@ -55,9 +55,16 @@ def move():
 
     draw()
 
-    for target in targets:
-        if not inside(target):
-            return
+    for target in targets: #Se eliminó la condición que terminaba el juego si se iba una bola
+        if not inside(target): #Se mantiene la condicion de que si la bola toca la orilla
+            if randrange(40) == 0:#Pero ahora al tocar la orilla genera otra bola.
+                y = randrange(-150, 150)
+                target = vector(200, y)
+                targets.append(target)
+
+                for target in targets:
+                    target.x -= 0.5
+            
 
     ontimer(move, 50)
 
