@@ -6,20 +6,23 @@ ball = vector(-200, -200)
 speed = vector(0, 0)
 targets = []
 
+
 def tap(x, y):
-    "Respond to screen tap."
+    """Respond to screen tap."""
     if not inside(ball):
         ball.x = -199
         ball.y = -199
         speed.x = (x + 200) / 25
         speed.y = (y + 200) / 25
 
+
 def inside(xy):
-    "Return True if xy within screen."
+    """Return True if xy within screen."""
     return -200 < xy.x < 200 and -200 < xy.y < 200
 
+
 def draw():
-    "Draw ball and targets."
+    """Draw ball and targets."""
     clear()
 
     for target in targets:
@@ -32,8 +35,9 @@ def draw():
 
     update()
 
+
 def move():
-    "Move ball and targets."
+    """Move ball and targets."""
     if randrange(40) == 0:
         y = randrange(-150, 150)
         target = vector(200, y)
@@ -55,18 +59,18 @@ def move():
 
     draw()
 
-    for target in targets: #Se eliminó la condición que terminaba el juego si se iba una bola
-        if not inside(target): #Se mantiene la condicion de que si la bola toca la orilla
-            if randrange(40) == 0:#Pero ahora al tocar la orilla genera otra bola.
+    for target in targets:  # Se eliminó la condición que terminaba el juego si se iba una bola
+        if not inside(target):  # Se mantiene la condicion de que si la bola toca la orilla
+            if randrange(40) == 0:  # Pero ahora al tocar la orilla genera otra bola.
                 y = randrange(-150, 150)
                 target = vector(200, y)
                 targets.append(target)
 
                 for target in targets:
                     target.x -= 0.5
-            
 
-    ontimer(move, 50)
+    ontimer(move, 8)  # Disminuyendo la cantidad de milisegundos entre cada movimiento para aumentar la velocidad
+
 
 setup(420, 420, 370, 0)
 hideturtle()
