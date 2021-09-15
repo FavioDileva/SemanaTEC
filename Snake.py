@@ -45,8 +45,8 @@ def move():
         square(head.x, head.y, 9, 'red')
         update()
         return
-    if head.x==190:
-        change(0,-20)
+    if head.x==190: #Tomando en cuenta los límites si la cabeza de la serpiente
+        change(0,-20)#Llega a los límites se mueve dos espacios hacía cualquier lado y/o atrás
         change(-10,0)
         
         
