@@ -43,33 +43,41 @@ def reiniciar_sistema():
     Lado_B = []#lista b
     Path = []#lista path
     
-def HCR(): #
-    F = Lado_A
-    D = Lado_B
-    while len(Lado_B) != 4:
-        p1, p2 = Viaje(F, D)
-        if valida_estado (F) and valida_estado (D):
+def reiniciar_sistema():
+  #funcion de reiniciar sistema 
+    global Lado_A, Lado_B, Path #Se utiliza para declarar variables como variables globales, a las que se puede acceder desde cualquier parte del programa. 
+    Lado_A = ['Granjero', 'Zorro', 'Ganzo', 'Maiz'] #Lista A
+    Lado_B = []#lista b
+    Path = []#lista path
+
+def HCR(): #funcion principal 
+    F = Lado_A #lista a 
+    D = Lado_B#lista b
+    while len(Lado_B) != 4: #se abre ciclo while 
+        p1, p2 = Viaje(F, D) 
+        if valida_estado (F) and valida_estado (D): #Ciclo if para la funcion de valida_estado y valida_viaje
             #print ('Estado valido, continuamos')
-            if F == Lado_A:
-                Path.append('A->B :')
-            else:
-                Path.append('B->A :')
-            Path.append(p1)
-            Path.append(p2)
+            if F == Lado_A: #
+                Path.append('A->B :') #si se cumple se grega"A->B:"
+            else:#sino se cumple 
+                Path.append('B->A :')#se agrega "b->A"
+
+            Path.append(p1)#se agrega el elemnto deseado para p1
+            Path.append(p2)#se agrega el elemnto deseado a p2
             
             Temp = F
             F = D
             D = Temp      
-        else:
+        else:#sino se cumple el primer ciclo 
             #print ('Estado inválido, REINICIO DEL SISTE;A')
-            reiniciar_sistema()
+            reiniciar_sistema()#se activa funcion reiniciar_sistema 
             F = Lado_A
             D = Lado_B
-    return (Path)
+    return (Path) #se regresa la lista path
 
-def main():
+def main(): #funcion main que llamara a todos lo metodos a ejecutarse
     P = HCR()
-    while len(P) > 22:
+    while len(P) > 22:#ciclo while 
         reiniciar_sistema()
         print ('\nBuscando una mejor solución, Longitud del Path', len(P))
         P = HCR()
