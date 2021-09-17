@@ -16,9 +16,6 @@ HCRfinal.py hara que la lista de los personajes se evaluen de manera obtima para
 Se abre la paqueteria random en este primer codigo para dar mas de una sola solucion al problema,
 Declaramos las listas con los personajes en ellas 
 Se declara la primer funcion que se encarga de elegir un elemento aleatorio, 
-2
-
-
 
 
 
