@@ -35,15 +35,14 @@ def valida_estado(L):  #Funcion con parametro L en donde se encuenta el ciclo if
       #segunda alternativa del codigo ahora con los elemnetos de la lista restantes 
         return False#sino se cumple se vuelve a correr el ciclo 
     return True#si alguno se cumple se cierra ciclo 
-
+  
 def reiniciar_sistema():
   #funcion de reiniciar sistema 
-    global Lado_A, Lado_B, Path
+    global Lado_A, Lado_B, Path #Se utiliza para declarar variables como variables globales, a las que se puede acceder desde cualquier parte del programa. 
+    Lado_A = ['Granjero', 'Zorro', 'Ganzo', 'Maiz'] #Lista A
+    Lado_B = []#lista b
+    Path = []#lista path
     
-    Lado_A = ['Granjero', 'Zorro', 'Ganzo', 'Maiz']
-    Lado_B = []
-    Path = []
-
 def HCR(): #
     F = Lado_A
     D = Lado_B
