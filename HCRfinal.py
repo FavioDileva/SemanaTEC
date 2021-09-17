@@ -9,7 +9,7 @@ Path = []
 #variable path con lista vacia  
 
 def seleccion(L):
-  #primera funcion de codigo que se encanga de la seleccion de un numero aleatoreo entero, con parametro L
+  #primera funcion de codigo que se encanga de la seleccion de un elemento aleatoreo con parametro L
     op = random.randint(0,len(L)-1)#Devuelve un entero aleatorio N tal que a <= N <= b. Alias ​​de rango aleatorio (a, b + 1).
     return (L[op]) #regresa L
 
