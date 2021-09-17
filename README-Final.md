@@ -12,11 +12,3 @@ prueba y error descubra cual es la solución más corta para este mismo.
 La solucion se compone de dos partes, una de ellas "HCRfinal.py" nos darà unicamente la solucion del acertijo mientras que la otra parte "final.py" nos dara la animacion del mismo
 En HCRfinal.py tuvimos que documentar el codigo sin modicicarlo al igual que con final.py.
 
-HCRfinal.py hara que la lista de los personajes se evaluen de manera obtima para llegar a la solucion mas optima posible, que es de 7 movimientos.
-Se abre la paqueteria random en este primer codigo para dar mas de una sola solucion al problema, 
-Declaramos las listas con los personajes en ellas 
-Se declara la primer funcion que se encarga de elegir un elemento aleatorio, 
-
-
-
-
