@@ -75,13 +75,14 @@ def HCR(): #funcion principal
             D = Lado_B
     return (Path) #se regresa la lista path
 
+
 def main(): #funcion main que llamara a todos lo metodos a ejecutarse
     P = HCR()
-    while len(P) > 22:#ciclo while 
-        reiniciar_sistema()
-        print ('\nBuscando una mejor solución, Longitud del Path', len(P))
+    while len(P) > 22:#ciclo while con funcion len la cual permite obtenet la longitud de una cadena de valores o el numero de estos mismos que componen un objeto, si P es mayor a 22 se mandan a llamr a las funciones 
+        reiniciar_sistema() #sino se llama a la funcion reiniciar_sistema 
+        print ('\nBuscando una mejor solución, Longitud del Path', len(P)) #se imprime en pantalla el mensaje
         P = HCR()
-    print (P)
-    print (len(P))
+    print (P) #se imprime la mejor solucion del path 
+    print (len(P))#se imprime el numero de los elementos dentro de la mejor solucion 
             
-main()
+main()#se cierra el main
