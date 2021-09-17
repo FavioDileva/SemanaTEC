@@ -1,36 +1,43 @@
-import random
+import random#Paqueteria usada para dar soluciones aleatorias al acertijo 
 
 Lado_A = ['Granjero', 'Zorro', 'Ganzo', 'Maiz']
+#variable A con la lista de los nombres de los personajes
+#Las listas sirven para almacenar los datos 
 Lado_B = []
+#variable b con lista vacia 
 Path = []
+#variable path con lista vacia  
 
 def seleccion(L):
-    op = random.randint(0,len(L)-1)
-    return (L[op])
+  #primera funcion de codigo que se encanga de la seleccion de un numero aleatoreo entero, con parametro L
+    op = random.randint(0,len(L)-1)#Devuelve un entero aleatorio N tal que a <= N <= b. Alias ​​de rango aleatorio (a, b + 1).
+    return (L[op]) #regresa L
 
 def Viaje(F, D):
+  #funcion viaje con los paramentros F y D que se encargara de remover algunos elementos de la lista principal 
     p1 = seleccion(F)
     #print ('Selección -> ', p1)
     if p1 != 'Granjero':
-        F.remove(p1)
-        D.append(p1)
+      #ciclo if para el mejor manejo de remove 
+        F.remove(p1) #busca entre los elementos para eliminar el elemento del granjero en la lista 
+        D.append(p1) #añade al final de la lista lo que se desea 
 
     F.remove('Granjero')
     D.append('Granjero')
-
-
     #print (F)
     #print (D)
-    return ('Granjero',p1)
+    return ('Granjero',p1) #Regresa en la variable Granjero
 
-def valida_estado(L):
-    if 'Maiz' in L and 'Ganzo' in L and len(L) == 2:
-        return False
+def valida_estado(L):  #Funcion con parametro L en donde se encuenta el ciclo if 
+    if 'Maiz' in L and 'Ganzo' in L and len(L) == 2: #Ciclo if que busca un elemnto en el rango L 
+        return False #sino se cumple se vuelve a correr el ciclo 
     elif 'Zorro' in L and 'Ganzo' in L and len(L) == 2:
-        return False
-    return True
+      #segunda alternativa del codigo ahora con los elemnetos de la lista restantes 
+        return False#sino se cumple se vuelve a correr el ciclo 
+    return True#si alguno se cumple se cierra ciclo 
 
 def reiniciar_sistema():
+  #funcion de reiniciar sistema 
     global Lado_A, Lado_B, Path
     
     Lado_A = ['Granjero', 'Zorro', 'Ganzo', 'Maiz']
@@ -71,5 +78,3 @@ def main():
     print (len(P))
             
 main()
-
-
