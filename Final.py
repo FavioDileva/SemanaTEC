@@ -27,17 +27,16 @@ def redrawGameWindow(Dir, p1, p2):  # Función que dibuja la pantalla y la actua
             win.blit(farmer, (x, y - 50))
             if p2 != farmer:
                 win.blit(p2, (x + 50, y - 50))
-        """Si left, dibujar BoatLeft el la posición (x, y) y al granjero (farmer) en la posición (x,y-50); 
-           si p2 es diferente de farmer, dibujar p2 en la posición (x+50,y-50) """
-    elif left:
-        win.blit(BoatLeft, (x, y))
-        win.blit(farmer, (x, y - 50))
-    if p2 != farmer:
-            win.blit(p2, (x + 50, y - 50))
-
+        # left, dibujar BoatLeft el la posición (x, y) y al granjero (farmer) en la posición (x,y-50);
+        #   si p2 es diferente de farmer, dibujar p2 en la posición (x+50,y-50)
+        elif left:
+            win.blit(BoatLeft, (x, y))
+            win.blit(farmer, (x, y - 50))
+            if p2 != farmer:
+                win.blit(p2, (x + 50, y - 50))
     else:
         win.blit(char, (x, y))
-        pygame.display.update()  # Actualizando las partes del display indicadas
+    pygame.display.update()  # Actualizando las partes del display indicadas
 
 
 def get_characters(d, p1, p2):  # Función que selecciona a los personajes siguiendo las indicaciones de la lista P
@@ -101,28 +100,28 @@ def HCR_animacion(P):  # Función que genera la animacion
             move += 3
             Disembark_characters(Side_A, p1, p2)
 
-        """Si keys pygame.K_RIGHT, establecer left como falso y right como verdadero """
-        if keys[pygame.K_RIGHT]:
+
+        # Si keys pygame.K_RIGHT, establecer left como falso y right como verdadero """
+        elif keys[pygame.K_RIGHT]:
             right = True
             left = False
-    """ Si  move es menor que el largo de P, empleando la función get_characters() seleccionar a los personajes 
-    siguiendo las indicaciones de la lista P, embarcar los personajes, y por cada paso en un rango de 65, 
-    aumentar vel a x, actualizar el display llamando la función redrawGameWindow(), poner un delay de 70, 
-    aumentar move en 3, y desembarcar a los personajes en el lado B con la función Disembark_characters()"""
-    if move < len(P):
-        direction, p1, p2 = get_characters(P[move], P[move + 1], P[move + 2])
-        Embark_characters(Side_A, p1, p2)
-        for step in range(65):
-            x += vel
-            redrawGameWindow(direction, p1, p2)
-            pygame.time.delay(70)
-        move += 3
-        Disembark_characters(Side_B, p1, p2)
+            # Si  move es menor que el largo de P, empleando la función get_characters() seleccionar a los personajes
+            # siguiendo las indicaciones de la lista P, embarcar los personajes, y por cada paso en un rango de 65,
+            # aumentar vel a x, actualizar el display llamando la función redrawGameWindow(), poner un delay de 70,
+            # aumentar move en 3, y desembarcar a los personajes en el lado B con la función Disembark_characters()"""
+            if move < len(P):
+                direction, p1, p2 = get_characters(P[move], P[move + 1], P[move + 2])
+                Embark_characters(Side_A, p1, p2)
+                for step in range(65):
+                    x += vel
+                    redrawGameWindow(direction, p1, p2)
+                    pygame.time.delay(70)
+                move += 3
+                Disembark_characters(Side_B, p1, p2)
+        else:
+            redrawGameWindow('Standby', 'Unknown', 'Unknown')
 
-    else:
-        redrawGameWindow('Standby', 'Unknown', 'Unknown')
-
-pygame.quit()  # Desinicializando todos los módulos de Pygame
+    pygame.quit()  # Desinicializando todos los módulos de Pygame
 
 
 def Busca_solucion():  # Función que busca la mejor solución en el menor número de movimientos (7 movimientos)
