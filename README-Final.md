@@ -10,5 +10,5 @@ Utilizaremos el machine learning para que haga los procedimientos requeridos y t
 prueba y error descubra cual es la solución más corta para este mismo.
 
 La solucion se compone de dos partes, una de ellas "HCRfinal.py" nos darà unicamente la solucion del acertijo mientras que la otra parte "final.py" nos dara la animacion del mismo
-En HCRfinal.py tuvimos que documentar el codigo sin modicicarlo al igual que con final.py.
+En HCRfinal.py tuvimos que documentar el codigo sin modificarlo al igual que con final.py.
 
